@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mechanic_app/Screens/dashboard.dart';
 import 'package:mechanic_app/Screens/help.dart';
 import 'package:mechanic_app/Screens/history.dart';
 import 'package:mechanic_app/Screens/landing.dart';
@@ -9,6 +8,7 @@ import 'package:mechanic_app/Screens/priv_poli.dart';
 import 'package:mechanic_app/Screens/profile.dart';
 import 'package:mechanic_app/Screens/ratings.dart';
 import 'package:mechanic_app/Utils/user_pref.dart';
+import 'package:mechanic_app/main.dart';
 
 class DrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -26,7 +26,8 @@ class DrawerWidget extends StatelessWidget {
               imgUrl: user.imagePath,
               name: user.fullname,
               onClicked: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => ProfileScreen()))),
+                  MaterialPageRoute(builder: (context) => ProfileScreen()))
+          ),
           Container(
             padding: padding,
             child: Column(
@@ -139,7 +140,7 @@ class DrawerWidget extends StatelessWidget {
     switch (index) {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => DashboardScreen(),
+          builder: (context) => MainPage(),
         ));
         break;
       case 1:

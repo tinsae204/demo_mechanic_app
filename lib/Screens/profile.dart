@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mechanic_app/Models/user.dart';
 import 'package:mechanic_app/Utils/user_pref.dart';
-import 'package:mechanic_app/Widgets/appbar_widget.dart';
 import 'package:mechanic_app/Widgets/btn_widget.dart';
 import 'package:mechanic_app/Widgets/profile_widget.dart';
 import 'package:mechanic_app/Widgets/textfield_widget.dart';
@@ -19,7 +18,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final user = UserPref.user;
 
     return Scaffold(
-      appBar: buildAppBar(context),
+          appBar: AppBar(
+          title: Text('Profile'),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+        ),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
