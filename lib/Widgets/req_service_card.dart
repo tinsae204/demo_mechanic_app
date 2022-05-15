@@ -31,13 +31,20 @@ class ServiceCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          Text(
+            style: TextStyle(
+              "Service Request",
+              color: Color.fromRGBO(19, 22, 33, 1),
+              fontSize: 16.0,
+            )
+          ),
           children: [
             SizedBox(
-                    height: 10.0,
+              height: 10.0,
             ),
             TextRow("Service Type: ", serv.service_type),
             SizedBox(
-                    height: 5.0,
+              height: 5.0,
             ),
             TextRow("Requested at: ", formatter.format(serv.req_date))
           ],

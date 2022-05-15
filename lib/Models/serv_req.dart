@@ -1,15 +1,12 @@
-import 'dart:ui';
-
-import 'package:intl/intl.dart';
 
 class ServiceRequest {
-  final int id;
-  final String service_type;
-  final String car_info;
-  final String location;
-  final DateTime req_date;
+  int id;
+  String service_type;
+  String car_info;
+  String location;
+  DateTime req_date;
 
-  const ServiceRequest({
+  ServiceRequest({
       required this.id,
       required this.service_type,
       required this.car_info,

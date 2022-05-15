@@ -21,7 +21,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           appBar: AppBar(
           title: Text('Profile'),
           centerTitle: true,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
+          elevation: 0
+      
         ),
       body: ListView(
         physics: BouncingScrollPhysics(),
