@@ -80,7 +80,7 @@ class PaymentScreen extends StatelessWidget {
               );
               },
               itemCount: payment.length
-            )
+          )
         ],
       )));
 }

@@ -1,15 +1,17 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mechanic_app/Models/payment.dart';
+import 'package:intl/intl.dart';
+import '../Models/serv_req.dart';
 
-class PaymentCard extends StatelessWidget {
-  final Payment payment;
+class HistoryCard extends StatelessWidget {
 
-  PaymentCard({required this.payment});
+  final ServiceRequest serv;
 
-  // const PaymentCard({ Key? key }) : super(key: key);
+  HistoryCard({required this.serv});  
+  final DateFormat formatter = DateFormat("yyyy MM dd");
+  // const HistoryCard({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class PaymentCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              payment.ref_no,
+              serv.service_type,
               style: TextStyle(
                 color: Color.fromRGBO(19, 22, 33, 1),
                 fontSize: 18.0,
@@ -37,33 +39,25 @@ class PaymentCard extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            AmountRow("Amount: ", payment.amount),
-            SizedBox(
-              height: 5.0,
-            ),
-            AmountRow("Rate: ", payment.percent),
-            SizedBox(
-              height: 5.0,
-            ),
-            AmountRow("To be Paid: ", (payment.amount * payment.percent) / 100)
+            TextRow("Date: ", formatter.format(serv.req_date))
           ],
         ),
       ),
     );
   }
 
-  Widget AmountRow(String label, double amount) {
+  Widget TextRow(String txtOne, String txtTwo) {
     return Wrap(
       children: [
         Text(
-          "$label:",
+          "$txtOne:",
           style: TextStyle(
             color: Color.fromRGBO(74, 77, 84, 0.7),
             fontSize: 14.0,
           ),
         ),
         Text(
-          "$amount",
+          txtTwo,
           style: TextStyle(
             color: Color.fromRGBO(19, 22, 33, 1),
             fontSize: 14.0,
@@ -71,5 +65,5 @@ class PaymentCard extends StatelessWidget {
         ),
       ],
     );
-  }
+  }  
 }
