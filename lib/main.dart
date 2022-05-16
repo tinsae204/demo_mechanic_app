@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const, unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:mechanic_app/Widgets/drawer_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,14 +67,14 @@ class _MainPageState extends State<MainPage> {
         child: DrawerWidget(),
       ),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.blue),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         elevation: 0,
         actions: [
           IconButton(
               padding: const EdgeInsets.fromLTRB(0, 6, 6, 0),
               icon: const Icon(Icons.notifications_none_outlined,
-                  color: Colors.grey, size: 25),
+                  color: Colors.black, size: 25),
               onPressed: () {
                 Navigator.push(
                     context,

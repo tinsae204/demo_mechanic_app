@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mechanic_app/main.dart';
 
 class SingleServiceRequest extends StatefulWidget {
   const SingleServiceRequest({Key? key}) : super(key: key);
@@ -124,8 +125,29 @@ class _SingleServiceRequestState extends State<SingleServiceRequest> {
                       ),
                       padding: EdgeInsets.all(16.0),
                       height: ScreenUtil().setHeight(127.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RaisedButton(
+                              color: Color.fromRGBO(29, 161, 242, 1),
+                              child: Text("Accept", style: TextStyle(color: Colors.white)),
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => MainPage()));
+                              }
+                            ),
+                            SizedBox(width: 5),
+                            RaisedButton(
+                              color: Color.fromARGB(255, 159, 67, 5),
+                              child: Text("Decline", style: TextStyle(color: Colors.white)),
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => MainPage()));
+                              }
+                            )
+                          ]
+                        ),
                       ),
                     ),
                   ],
@@ -187,6 +209,7 @@ class _SingleServiceRequestState extends State<SingleServiceRequest> {
       child: Row(
         children: [
           InkWell(
+            onTap: () {},
             child: Container(
               width: double.infinity,
               height: ScreenUtil().setHeight(30.0),
