@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mechanic_app/Models/serv_req.dart';
+import 'package:mechanic_app/Widgets/history_widget.dart';
 
 
 class HistoryScreen extends StatelessWidget {
@@ -67,6 +68,23 @@ class HistoryScreen extends StatelessWidget {
               ),
               SizedBox(
                 height: 10.0,
+              ),
+              ListView.separated(
+                shrinkWrap: true,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 10.0,
+                ),
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  return HistoryCard(serv: serv_req[index]);
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    height: 15.0,
+                  );
+                },
+                itemCount: serv_req.length
               ),
             ],
           ),
