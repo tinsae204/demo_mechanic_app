@@ -39,48 +39,48 @@ class PaymentScreen extends StatelessWidget {
       ),
       body: Container(
           child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 20.0,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 24.0,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Service Requests",
-                  style: TextStyle(
-                    color: Color.fromRGBO(19, 22, 33, 1),
-                    fontSize: 18.0,
-                  ),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20.0,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.0,
                 ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          ListView.separated(
-            shrinkWrap: true,
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 10.0,
-            ),
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (BuildContext context, int index) {
-              return PaymentCard(payment: payment[index]);
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                height: 15.0,
-              );
-              },
-              itemCount: payment.length
-          )
-        ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Service Requests",
+                      style: TextStyle(
+                        color: Color.fromRGBO(19, 22, 33, 1),
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              ListView.separated(
+                shrinkWrap: true,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 10.0,
+                ),
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  return PaymentCard(payment: payment[index]);
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    height: 15.0,
+                  );
+                },
+                itemCount: payment.length
+              )
+            ],
       )));
 }
